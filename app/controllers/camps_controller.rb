@@ -1,5 +1,6 @@
 class CampsController < ApplicationController
-	before_action :set_camp, only: [:show, :update, :destroy]
+	before_action  :set_camp, only: [:show, :update, :destroy]  
+	 
 	def index
     @camps = Camp.all
     json_response(@camps)
@@ -29,7 +30,9 @@ class CampsController < ApplicationController
 	 def camp_params
      params.permit(:name, :fees, :course, :website)
 	 end	
+
    def set_camp
    @camp = Camp.find(params[:id])
    end	
+ 
 end
