@@ -3,7 +3,9 @@ json.data do
 		json.call(
 		  @user,
 		  :email,
-		  :id
+		  :id,
+		  :authentication_token,
+		  :confirmed_at
     )
 	end	
 end

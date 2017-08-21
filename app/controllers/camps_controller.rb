@@ -2,12 +2,13 @@ class CampsController < ApplicationController
 	before_action  :set_camp, only: [:show, :update, :destroy]  
 	 
 	def index
+
     @camps = current_user.camps
     json_response(@camps)
   end
 	
 	def create
-    @camp = current_user.camps.build(camp_params)
+    @camp = current_user.camps.create(camp_params)
     json_response(@camp, :created)
 	end
 
