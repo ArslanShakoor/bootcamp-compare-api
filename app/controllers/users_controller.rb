@@ -2,17 +2,30 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_param)
 
-  	if @user.save
-  		render :create, status: :created
-  	else
-  	  head(:unprocessable_entity)	
-  	end  
-
+  	@user.save
   end
+
+  def confirm
+    token = token_param.to_s
+
+    user = User.find_by(confirmation_token: token)
+
+    if user.present?
+      user.mark_as_confirmed!
+      render json: {status: 'User confirmed successfully'}, status: :ok
+    else
+      render json: {status: 'Invalid token'}, status: :not_found
+    end
+  end
+
   
 
   private
     def user_param
-      params.require(:user).permit(:email, :password, :first_name, :last_name)	
+      params.permit(:email, :password, :first_name, :last_name)	
     end
+
+    def token_param
+      params.permit(:confirmation_token)
+    end  
 end	

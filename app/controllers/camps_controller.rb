@@ -1,6 +1,6 @@
 class CampsController < ApplicationController
 	before_action  :set_camp, only: [:show, :update, :destroy]  
-	 
+	before_action :authenticate_user! 
 	def index
 
     @camps = current_user.camps

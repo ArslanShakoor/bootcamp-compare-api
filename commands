@@ -59,3 +59,6 @@ add_column :users, :type, :string
 
 add reference 
 add_reference :camps, :user, index: true, foreign_key: true
+
+#if migration file gets error first need to roll back and then migrate again
+rails db:rollback
