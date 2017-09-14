@@ -2,8 +2,7 @@ class CampsController < ApplicationController
 	before_action  :set_camp, only: [:show, :update, :destroy]  
 	before_action :authenticate_user! 
 	def index
-
-    @camps = current_user.camps
+    @camps = Camp.all
     json_response(@camps)
   end
 	
@@ -33,7 +32,7 @@ class CampsController < ApplicationController
 	 end	
 
    def set_camp
-   @camp = current_user.Camp.find(params[:id])
+   @camp = Camp.find(params[:id])
    end	
  
 end
