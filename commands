@@ -1,6 +1,6 @@
 #delete the migration file
 rails destroy migration create_users
- 
+
 #check error in user object
 user.errors.full_messages
 
@@ -31,7 +31,7 @@ git reset --hard <old commit number>
 # after the previous command below command use for remmote push
 git push -f origin
 
- 
+
 
 #gem installer
 $ gem install rails-controller-testing
@@ -55,10 +55,13 @@ bundle exec rake db:create
 bundle exec rake db:create
 
 #add column in existing table
-add_column :users, :type, :string 
+add_column :users, :type, :string
 
-add reference 
+add reference
 add_reference :camps, :user, index: true, foreign_key: true
 
 #if migration file gets error first need to roll back and then migrate again
 rails db:rollback
+
+#remove reference and foreign key
+remove_reference(:products, :user, index: true)

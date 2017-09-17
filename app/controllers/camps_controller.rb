@@ -19,7 +19,6 @@ class CampsController < ApplicationController
 
 	def show
 		json_response(@camp)
-
 	end
 
 	def update
@@ -38,14 +37,16 @@ class CampsController < ApplicationController
 	 end
 
    def set_camp
-   @camp = ActiveRecord::Base.connection.exec_query(
-		 "SELECT camps.*, avg(overall_review)
-			FROM ratings
-			INNER JOIN camps
-			ON ratings.camp_id = camps.id
-			WHERE camps.id = 20
-			GROUP BY camps.id
-		 ")
+   @camp =  ActiveRecord::Base.connection.exec_query(
+		 "select camps.*, avg(overall_review) as overall,
+		  avg(curriculum_review) as curriculum,
+			avg(job_assistance_review) as job_assistance,
+			avg(instructor_review) as instructor
+		  from ratings
+			inner join camps
+			on ratings.camp_id = camps.id
+			where camps.id=#{params[:id]}
+			group by camps.id")
    end
 
 end
