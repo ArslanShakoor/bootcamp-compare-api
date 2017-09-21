@@ -17,9 +17,9 @@ it {should validate_length_of(:website).
 it {should validate_length_of(:course).
   is_at_least(10).is_at_most(100)}
 it {should validate_length_of(:facebook).
-  is_at_least(10).is_at_most(100)}
+  is_at_least(6).is_at_most(100)}
 it {should validate_length_of(:twitter).
-  is_at_least(10).is_at_most(100)}
+  is_at_least(6).is_at_most(100)}
 
 # validation the ranges
 it { should validate_inclusion_of(:graduation_rate).in_range(0..100) }
