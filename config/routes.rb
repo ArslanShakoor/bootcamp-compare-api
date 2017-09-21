@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :camps
   resource :sessions, only: [:create, :destroy]
-  resources :ratings, :only => [:index, :show]
+  resources :ratings, only: [:index, :show, :create] do
+    collection do
+      get :user_camp
+    end
+  end
   resource :user, only: [:create], :defaults => { :format => 'json' } do
     collection do
       post 'confirm'

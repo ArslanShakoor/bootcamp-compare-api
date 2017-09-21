@@ -1,7 +1,27 @@
 class Rating < ApplicationRecord
-	
+
+	#association
 	belongs_to :camp
 
-	validates_presence_of :title, :description, :overall_review, :instructor_review, :curriculum_review, :job_assistance_review
+  #validation for presence of fields
+	validates_presence_of :name, :email, :overall_review, :curriculum_review,
+	                      :job_assistance_review, :instructor_review, :title,
+												:description
+
+  #validation of ranges
+	validates_length_of :name, in: 6..26
+	validates_length_of :email, in: 10..100
+	validates_length_of :title, in: 10..100
+	validates_length_of :description, in: 50..1500
+
+	#validation of ranges
+	validates_inclusion_of :overall_review, in: 1..5
+	validates_inclusion_of :instructor_review, in: 1..5
+	validates_inclusion_of :curriculum_review, in: 1..5
+	validates_inclusion_of :job_assistance_review, in: 1..5
+
+
+
+
 
 end

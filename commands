@@ -65,3 +65,6 @@ rails db:rollback
 
 #remove reference and foreign key
 remove_reference(:products, :user, index: true)
+
+#for rspec first use this command.
+rails db:test:load

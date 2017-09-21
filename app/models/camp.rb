@@ -1,7 +1,7 @@
 class Camp < ApplicationRecord
 	belongs_to :user
 	#validation
-	validates_presence_of :name, :fees, :website, :course
-   
+	validates_presence_of :name, :fees, :website, :course, :user_id
+
 	has_many :ratings
 end
