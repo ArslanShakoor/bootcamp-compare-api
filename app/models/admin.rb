@@ -1,4 +1,4 @@
 class Admin < User
-  #relationship
-  has_many :camps
+  #relationship with depnenent deletion
+  has_many :camps, dependent: :destroy
 end

@@ -20,6 +20,6 @@ class User < ApplicationRecord
     self.confirmed_at = Time.now.utc
     save
   end
-   
+
 
 end

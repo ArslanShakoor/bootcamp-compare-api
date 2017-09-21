@@ -27,5 +27,11 @@ RSpec.describe Rating, type: :model do
   it { should validate_inclusion_of(:job_assistance_review).in_range(1..5) }
   it { should validate_inclusion_of(:curriculum_review).in_range(1..5) }
 
+  # validation of association
+  it { should belong_to(:camp)}
+
+  # validation of uniequeness
+  it { should validate_uniqueness_of(:email).scoped_to(:camp_id) }
+
 
 end
