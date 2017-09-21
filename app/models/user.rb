@@ -1,5 +1,12 @@
 class User < ApplicationRecord
-  validates_presence_of :first_name, :last_name, :email
+  # validation of presence of fields
+  validates_presence_of :first_name, :last_name, :email, :password
+
+  validates_length_of :first_name, in: 6..26
+  validates_length_of :last_name, in: 6..26
+  validates_length_of :email, in: 10..100
+  validates_length_of :password, in: 6..50
+
 	acts_as_token_authenticatable
 
 	# Include default devise modules. Others available are:
@@ -14,5 +21,5 @@ class User < ApplicationRecord
   end
 
   has_many :camps
- 
+
 end
