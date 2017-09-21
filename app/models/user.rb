@@ -14,12 +14,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
 				:recoverable, :rememberable, :trackable, :validatable,
 				:confirmable
+
   def mark_as_confirmed!
     self.confirmation_token = nil
     self.confirmed_at = Time.now.utc
     save
   end
-
-  has_many :camps
+   
 
 end

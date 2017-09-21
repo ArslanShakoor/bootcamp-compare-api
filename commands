@@ -68,3 +68,6 @@ remove_reference(:products, :user, index: true)
 
 #for rspec first use this command.
 rails db:test:load
+
+#find by coulmn in active record
+User.find_by_email("abc@xyz.com")

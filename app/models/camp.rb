@@ -1,5 +1,5 @@
 class Camp < ApplicationRecord
-	belongs_to :user
+	belongs_to :admin
 	# validation of presence of fields
 	validates_presence_of :name, :fees, :website, :course, :user_id
 
@@ -16,6 +16,4 @@ class Camp < ApplicationRecord
 	validates_inclusion_of :averge_salary, in: 0..1000000
 	validates_inclusion_of :fees, in: 0..50000
 
-  #relationship
-	has_many :ratings
 end
