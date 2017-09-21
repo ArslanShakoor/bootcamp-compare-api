@@ -19,9 +19,5 @@ class Rating < ApplicationRecord
 	validates_inclusion_of :instructor_review, in: 1..5
 	validates_inclusion_of :curriculum_review, in: 1..5
 	validates_inclusion_of :job_assistance_review, in: 1..5
-
-
-
-
-
+	
 end

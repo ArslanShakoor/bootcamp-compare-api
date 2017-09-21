@@ -28,6 +28,4 @@ RSpec.describe Rating, type: :model do
   it { should validate_inclusion_of(:curriculum_review).in_range(1..5) }
 
   
-
-
 end
