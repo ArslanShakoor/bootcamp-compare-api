@@ -71,3 +71,6 @@ rails db:test:load
 
 #find by coulmn in active record
 User.find_by_email("abc@xyz.com")
+
+#reset the schema if the schema is not showing according to migrations
+rails db:reset

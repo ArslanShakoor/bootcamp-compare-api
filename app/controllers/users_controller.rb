@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def create
-  	@user = User.new(user_param)
-
-  	@user.save
+  	@user = User.create(user_param)
   end
 
   def confirm
@@ -18,14 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
-  
+
 
   private
     def user_param
-      params.permit(:email, :password, :first_name, :last_name)	
+      params.permit(:email, :password, :first_name, :last_name)
     end
 
     def token_param
       params.permit(:confirmation_token)
-    end  
-end	
+    end
+end

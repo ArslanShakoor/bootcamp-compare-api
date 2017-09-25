@@ -7,7 +7,7 @@ it{should validate_presence_of(:name)}
 it{should validate_presence_of(:fees)}
 it{should validate_presence_of(:website)}
 it{should validate_presence_of(:course)}
-it{should validate_presence_of(:admin_id)}
+
 
 # validation the length of feilds values
 it {should validate_length_of(:name).
@@ -29,8 +29,8 @@ it { should validate_inclusion_of(:fees).in_range(0..50000) }
 
 # validation of uniqueness
 it {should validate_uniqueness_of(:name).ignoring_case_sensitivity}
- 
+
 # association validation
-it { should belong_to(:admin)}
+it { should belong_to(:admin_user)}
 it { should have_many(:ratings).dependent(:destroy)}
 end

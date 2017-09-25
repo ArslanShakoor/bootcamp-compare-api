@@ -6,7 +6,7 @@ class Rating < ApplicationRecord
   #validation for presence of fields
 	validates_presence_of :name, :email, :overall_review, :curriculum_review,
 	                      :job_assistance_review, :instructor_review, :title,
-												:description
+												:description,:camp_id
 
   #validation of ranges
 	validates_length_of :name, in: 6..26

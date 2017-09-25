@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '262677de89d0a79190a455e9478c931c55d91912b4a46c13a9d554d98b52e33d00f6271763fa00c449402ca203818a712cda4087201a83cf7bfcb50f5ed5d012'
+  # config.secret_key = 'f5a00df0b5878d0e6ee40fd3f9aba9b0363d06b0f3c2a1db7bda42f75020e67ef5490b44ebce9c9744626a19ac5b926283128119af7cefa2a84c32d171205efd'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '427d328aa0fe0663ee146c430ab37dfb787c95c5b653e9e51daeaea6f154d94633b6db900704ed16fc2f18dbf23177862708953e7621d830fe412dea12de5579'
+  # config.pepper = 'dfd9190f49a5c25329a27c48ac0fd7c1040669f6bb352ace35345c887b324ba766424fdca75e29715ea53e1b834e7a958ae7c6792938f3137407479a7b3844ed'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -122,7 +122,7 @@ Devise.setup do |config|
   # able to access the website for two days without confirming their account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming their account.
-  config.allow_unconfirmed_access_for = 2.days
+  # config.allow_unconfirmed_access_for = 2.days
 
   # A period that the user is allowed to confirm their account before their
   # token becomes invalid. For example, if set to 3.days, the user can confirm
@@ -245,7 +245,6 @@ Devise.setup do |config|
   # config.navigational_formats = ['*/*', :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  
   config.sign_out_via = :delete
 
   # ==> OmniAuth
