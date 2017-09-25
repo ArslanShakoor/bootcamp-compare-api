@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :rating do
     name  "arslan"
-    email "marketingcosno@gmail.com"
+    email "user@user.com"
     overall_review "3"
     instructor_review "4"
     job_assistance_review "1"

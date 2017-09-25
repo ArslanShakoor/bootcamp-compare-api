@@ -68,9 +68,9 @@ RSpec.describe 'Camp API' , type: :request do
         expect(response).to  have_http_status(422)
       end
 
-      # it "return the validation failure message" do
-      #   expect(response.body).to match(/Validation failed: Fees can't be blank, Website can't be blank, Course can't be blank/)
-      # end
+      it "return the validation failure message" do
+        expect(response.body).to include("Validation failed: Fees can't be blank, Fees is not included in the list, Website can't be blank, Website is too short (minimum is 10 characters), Course can't be blank, Course is too short (minimum is 10 characters)")
+      end
     end
   end
 

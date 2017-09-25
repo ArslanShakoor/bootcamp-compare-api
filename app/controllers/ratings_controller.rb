@@ -1,7 +1,8 @@
 class RatingsController < ApplicationController
+  before_action :authenticate_user!,  only: [:user_camp]
   # create the ratings
   def create
-	  @ratings = Rating.create(rating_params)
+	  @ratings = Rating.create!(rating_params)
 	  json_response(@ratings, :created)
   end
 

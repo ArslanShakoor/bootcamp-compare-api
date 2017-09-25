@@ -17,7 +17,7 @@ class CampsController < ApplicationController
     @camp = current_user.camps.create!(camp_params)
     json_response(@camp, :created)
 	end
-
+  
 	def show
 		json_response(@camp)
 	end
