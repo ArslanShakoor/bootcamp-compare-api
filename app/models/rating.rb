@@ -9,7 +9,7 @@ class Rating < ApplicationRecord
 												:description,:camp_id
 
   #validation of ranges
-	validates_length_of :name, in: 6..26
+	validates_length_of :name, in: 3..24
 	validates_length_of :email, in: 10..100
 	validates_length_of :title, in: 10..100
 	validates_length_of :description, in: 50..1500

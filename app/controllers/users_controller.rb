@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def create
-  	@user = User.create(user_param)
+  	@user = User.create!(user_param)
   end
 
   def confirm

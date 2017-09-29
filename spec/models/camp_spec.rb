@@ -11,7 +11,7 @@ it{should validate_presence_of(:course)}
 
 # validation the length of feilds values
 it {should validate_length_of(:name).
-  is_at_least(6).is_at_most(40)}
+  is_at_least(3).is_at_most(40)}
 it {should validate_length_of(:website).
   is_at_least(10).is_at_most(100)}
 it {should validate_length_of(:course).
