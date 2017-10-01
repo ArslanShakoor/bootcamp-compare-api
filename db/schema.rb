@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925124956) do
+ActiveRecord::Schema.define(version: 20171001202918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170925124956) do
     t.bigint "camp_id"
     t.string "name"
     t.string "email"
+    t.string "occupation"
     t.index ["camp_id"], name: "index_ratings_on_camp_id"
   end
 
