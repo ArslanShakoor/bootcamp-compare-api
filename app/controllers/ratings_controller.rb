@@ -21,6 +21,6 @@ class RatingsController < ApplicationController
   private
     # return the parameters
     def rating_params
-      params.permit(:title, :description, :overall_review, :curriculum_review, :instructor_review, :job_assistance_review, :anonymous, :camp_id, :email, :name )
+      params.permit(:title, :description, :overall_review, :curriculum_review, :instructor_review,:occupation, :job_assistance_review, :anonymous, :camp_id, :email, :name )
     end
 end
