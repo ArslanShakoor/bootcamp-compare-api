@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
     if current_user&.save
       head(:ok)
     else
-      head(:unauthorized)  
+      head(:unauthorized)
+    end    
   end
 end
