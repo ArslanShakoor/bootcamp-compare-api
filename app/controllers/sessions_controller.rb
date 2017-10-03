@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     if current_user ? head(:ok) : head(:unauthorized)
     end
   end
-
   def create
   	@user = User.where(email: params[:email]).first
   	if @user&.valid_password?(params[:password])
@@ -15,8 +14,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    if current_user
     current_user.authentication_token = nil
+    if current_user.save
+      head(:ok)
     else
       head(:unauthorized)
     end
