@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     current_user.authentication_token = nil
-    current_user.save
+    current_user.save!
 
   end
 end
