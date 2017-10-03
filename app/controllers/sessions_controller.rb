@@ -14,11 +14,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    current_user&.authentication_token = nil
-    if current_user&.save
-      head(:ok)
-    else
-      head(:unauthorized)
-    end    
+    current_user.authentication_token = nil
+    current_user.save
+
   end
 end
