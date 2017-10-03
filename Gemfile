@@ -36,7 +36,7 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rails-api', '~> 0.4.0'
+
 
 end
 
