@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 
   # validation of presence
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name, :email
 
   #validation of lengths
   validates_length_of :first_name, in: 3..12
