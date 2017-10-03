@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     @user = current_user
-    @user.authentication_token = nil
-    @user.save!
+     
   end
 end
