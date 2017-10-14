@@ -13,11 +13,23 @@ class CampsController < ApplicationController
     json_response(@camps)
   end
 
+	def featured
+		@camps_featured =  ActiveRecord::Base.connection.exec_query(
+    	"SELECT camps.name, avg(overall_review)
+    	 FROM ratings
+    	 INNER JOIN camps
+    	 ON ratings.camp_id = camps.id
+    	 GROUP BY camps.id
+    	")
+    json_response(@camps_featured)
+
+	end
+
 	def create
     @camp = current_user.camps.create!(camp_params)
     json_response(@camp, :created)
 	end
-  
+
 	def show
 		json_response(@camp)
 	end
