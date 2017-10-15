@@ -15,7 +15,7 @@ class CampsController < ApplicationController
 
 	def featured
 		@camps_featured =  ActiveRecord::Base.connection.exec_query(
-    	"SELECT camps.id,camps.name, avg(overall_review)
+    	"SELECT camps.id,camps.name,camps.website,avg(overall_review)
     	 FROM ratings
     	 INNER JOIN camps
     	 ON ratings.camp_id = camps.id
