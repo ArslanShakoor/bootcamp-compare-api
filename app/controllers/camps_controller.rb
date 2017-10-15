@@ -1,7 +1,7 @@
 class CampsController < ApplicationController
 	before_action  :set_camp, only: [:show]
 	before_action :up_del_camp, only: [:update, :destroy]
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :authenticate_user!, except: [:index, :show, :featured]
 	def index
     @camps =  ActiveRecord::Base.connection.exec_query(
     	"SELECT camps.*, avg(overall_review)
